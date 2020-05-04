@@ -18,6 +18,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
@@ -38,9 +40,9 @@ public class Sample_Activity extends AppCompatActivity {
 
 
 
-    String url = "https://vmihci.herokuapp.com/getimage";
+   // String url = "https://vmihci.herokuapp.com/getimage";
 
-    //String url ="http://144.75.191.68:5005/getimage";
+    String url ="http://144.75.191.68:5005/getimage";
     
 
     @Override
@@ -48,16 +50,17 @@ public class Sample_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sample);
 
-
-
-        
       
         final Button nothreat = findViewById(R.id.nothreatbutt);
         final Intent intent = new Intent(this, Sample_Activity.class);
         nothreat.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 finish();
+                overridePendingTransition(0, 0);
                 startActivity(intent);
+                overridePendingTransition(0,0);
+
+                //Sample_Activity.super.onResume();
 
 
             }
@@ -73,18 +76,16 @@ public class Sample_Activity extends AppCompatActivity {
         });
 
 
-
-
         imageView = (ImageView) findViewById(R.id.imageee);
         loadImageFromUrl(url);
-        textview = (TextView) findViewById(R.id.texx);
+            textview = (TextView) findViewById(R.id.texx);
 
-        String url2 = "https://vmihci.herokuapp.com/getrisk";
+            String url2 = "https://vmihci.herokuapp.com/getrisk";
 
-        OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder()
-                .url(url2)
-                .build();
+            OkHttpClient client = new OkHttpClient();
+            Request request = new Request.Builder()
+                    .url(url2)
+                    .build();
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -116,8 +117,6 @@ public class Sample_Activity extends AppCompatActivity {
 
 
 
-
-
     }
     
 
@@ -146,11 +145,12 @@ public class Sample_Activity extends AppCompatActivity {
     }
 
     private void loadImageFromUrl(String url) {
+        Log.d("picasso","message");
         Picasso.with(this).load(url).placeholder(R.mipmap.ic_launcher)
                 .error(R.mipmap.ic_launcher)
+                .networkPolicy(NetworkPolicy.NO_CACHE)
+                .memoryPolicy(MemoryPolicy.NO_CACHE)
                 .into(imageView, new com.squareup.picasso.Callback() {
-
-
                     @Override
                     public void onSuccess() {
 

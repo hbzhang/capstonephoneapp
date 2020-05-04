@@ -27,15 +27,16 @@
         android:layout_marginEnd="228dp"
         android:layout_marginRight="228dp"
         android:layout_marginBottom="125dp"
-        android:background="#F44336"
+        android:background="@drawable/mybutton"
         android:text="THREAT"
-        android:textColor="#FBF9F9"
-        android:textSize="20sp"
+        android:textColor="#F80808"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backgroundpicture" />
 
     <TextView
         android:id="@+id/textView4"
@@ -48,6 +49,7 @@
         android:layout_marginRight="120dp"
         android:background="#00FF0505"
         android:text="High Threat Alert"
+        android:typeface="monospace"
         android:textColor="#090909"
         android:textColorHighlight="#0C0C0C"
         android:textSize="24sp"
@@ -101,6 +103,8 @@
         android:layout_marginRight="66dp"
         android:layout_marginBottom="124dp"
         android:text="No Threat Detected"
+        android:background="@drawable/mybutton"
+        app:srcCompat="@drawable/backgroundpicture"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
