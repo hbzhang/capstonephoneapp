@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <!-- Customize your theme here. -->
+
+
+        <item name="android:statusBarColor">@color/design_default_color_primary</item>
+        <item name="android:icon">@drawable/ic_launcher_background</item>
+
+    </style>
+</resources>

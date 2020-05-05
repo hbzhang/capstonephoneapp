@@ -63,7 +63,7 @@ public class PhoneActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.i("Update", "Messages Sent");
 
-                String s2 = "POSSIBLE THREAT AT VIRGINIA MILITARY INSTITUTE";
+                String s2 = "POSSIBLE THREAT AT VIRGINIA MILITARY INSTITUTE : REQUIRES IMMMEDIATE RESPONSE";
                 String s1 = "7706246972";
                 String s3 = "3362072493";
                 String myPhone = "15555215554";

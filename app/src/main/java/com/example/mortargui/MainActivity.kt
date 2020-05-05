@@ -1,6 +1,7 @@
 package com.example.mortargui
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -27,12 +28,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, Sample_Activity::class.java))
 
 
-
         }
         AndroidNetworking.initialize(applicationContext)
-
-
-
 
 
     }

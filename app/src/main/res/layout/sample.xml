@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backgroundpicture" />
+        app:srcCompat="@drawable/red_honeycomb_texture_amoled_wallpaper_4k_ultra_hdkrm7ec7ax8" />
 
     <Button
         android:id="@+id/threatbutton"
@@ -42,26 +42,30 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginLeft="110dp"
         android:layout_marginTop="57dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginRight="120dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginRight="98dp"
+        android:layout_marginBottom="642dp"
         android:background="#00FF0505"
         android:text="High Threat Alert"
-        android:typeface="monospace"
-        android:textColor="#090909"
+        android:textColor="#FBFAFA"
         android:textColorHighlight="#0C0C0C"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/texx"
-        android:layout_width="107dp"
-        android:layout_height="57dp"
+        android:layout_width="131dp"
+        android:layout_height="34dp"
         android:layout_marginStart="152dp"
         android:layout_marginLeft="152dp"
         android:layout_marginTop="444dp"
@@ -69,9 +73,10 @@
         android:layout_marginRight="152dp"
         android:layout_marginBottom="230dp"
         android:text="TextView"
-        android:textColor="#0B0000"
+        android:textColor="#FBFBFB"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,13 +107,13 @@
         android:layout_marginEnd="66dp"
         android:layout_marginRight="66dp"
         android:layout_marginBottom="124dp"
-        android:text="No Threat Detected"
         android:background="@drawable/mybutton"
-        app:srcCompat="@drawable/backgroundpicture"
+        android:text="No Threat Detected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backgroundpicture" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.405"
-        app:srcCompat="@drawable/backgroundpicture" />
+        app:srcCompat="@drawable/red_honeycomb_texture_amoled_wallpaper_4k_ultra_hdkrm7ec7ax8" />
 
     <TextView
         android:id="@+id/textView"
@@ -30,10 +30,10 @@
         android:layout_marginBottom="669dp"
         android:background="#01DF8BED"
         android:text="HOME"
-        android:textColor="#131313"
-        android:typeface="monospace"
-        android:textSize="22sp"
+        android:textColor="#FDFCFC"
+        android:textSize="24sp"
         android:textStyle="bold"
+        android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
