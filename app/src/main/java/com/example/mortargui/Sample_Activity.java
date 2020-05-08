@@ -50,10 +50,14 @@ public class Sample_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sample);
 
+
+
+
       
         final Button nothreat = findViewById(R.id.nothreatbutt);
         final Intent intent = new Intent(this, Sample_Activity.class);
         nothreat.setOnClickListener(new View.OnClickListener(){
+
             public void onClick(View v){
                 finish();
                 overridePendingTransition(0, 0);
@@ -67,6 +71,7 @@ public class Sample_Activity extends AppCompatActivity {
         });
         final Button threat = findViewById(R.id.threatbutton);
         final Intent intent2 = new Intent(this, PhoneActivity.class);
+
         threat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +101,7 @@ public class Sample_Activity extends AppCompatActivity {
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
                     final String myResponse = response.body().string();
+
 
                     Sample_Activity.this.runOnUiThread(new Runnable() {
                         @Override
