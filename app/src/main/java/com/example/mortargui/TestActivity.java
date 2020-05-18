@@ -19,7 +19,7 @@ public class TestActivity extends Activity {
             public void run() {
                 try {
                     while (!isInterrupted()) {
-                        Thread.sleep(1000);
+                        Thread.sleep(100);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {

@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -38,7 +39,7 @@ public class Sample_Activity extends AppCompatActivity {
     ImageView imageView;
     TextView textview;
 
-
+    private BackgroundTask.OnDownloadUpdateListener downloadListener;
 
    // String url = "https://vmihci.herokuapp.com/getimage";
 
@@ -51,9 +52,22 @@ public class Sample_Activity extends AppCompatActivity {
         setContentView(R.layout.sample);
 
 
+        imageView = (ImageView) findViewById(R.id.imageee);
+        loadImageFromUrl(url);
+        textview = (TextView) findViewById(R.id.texx);
 
 
-      
+        downloadListener = new BackgroundTask.OnDownloadUpdateListener() {
+            @Override
+            public void OnDownloadDeckFinish(String Response) {
+                textview.setText(Response);
+            }
+        };
+
+        //BackgroundTask mTask = new BackgroundTask(this.getApplicationContext (), downloadListener);
+        //mTask.execute();
+
+
         final Button nothreat = findViewById(R.id.nothreatbutt);
         final Intent intent = new Intent(this, Sample_Activity.class);
         nothreat.setOnClickListener(new View.OnClickListener(){
@@ -69,6 +83,7 @@ public class Sample_Activity extends AppCompatActivity {
 
             }
         });
+
         final Button threat = findViewById(R.id.threatbutton);
         final Intent intent2 = new Intent(this, PhoneActivity.class);
 
@@ -81,14 +96,11 @@ public class Sample_Activity extends AppCompatActivity {
         });
 
 
-        imageView = (ImageView) findViewById(R.id.imageee);
-        loadImageFromUrl(url);
-            textview = (TextView) findViewById(R.id.texx);
 
-            String url2 = "https://vmihci.herokuapp.com/getrisk";
+            String url2 = "http://144.75.191.68:5005/getthreat";
 
             OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder()
+            final Request request = new Request.Builder()
                     .url(url2)
                     .build();
         client.newCall(request).enqueue(new Callback() {
@@ -104,15 +116,16 @@ public class Sample_Activity extends AppCompatActivity {
 
 
                     Sample_Activity.this.runOnUiThread(new Runnable() {
+
                         @Override
                         public void run() {
 
                             //parse myreponse
-                            JSON json = new JSON(myResponse);
-                            String threat = json.key("threats").index(0).key("gunthreat").stringValue();
+                            //JSON json = new JSON(myResponse);
+                           // String threat = json.key("threats").index(0).key("gunthreat").stringValue();
                             // String threat = json.key("gunthreat").stringValue();
                             //then put to textview
-                            textview.setText("Risk: " + threat);
+                            textview.setText("Risk: " + myResponse);
                         }
                     });
                 }
@@ -123,6 +136,13 @@ public class Sample_Activity extends AppCompatActivity {
 
 
 
+    }
+
+    private void update() {
+        Notification notification = null;
+        // update your interface here
+        textview.setText(TestService.threat);
+        notification.defaults |= Notification.DEFAULT_SOUND;
     }
     
 

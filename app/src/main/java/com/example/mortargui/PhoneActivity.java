@@ -54,16 +54,14 @@ public class PhoneActivity extends AppCompatActivity {
         }
 
 
-
-
-
         b1.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Log.i("Update", "Messages Sent");
 
-                String s2 = "POSSIBLE THREAT AT VIRGINIA MILITARY INSTITUTE : REQUIRES IMMMEDIATE RESPONSE";
+                String s2 = "POSSIBLE THREAT AT VIRGINIA MILITARY INSTITUTE : REQUIRES IMMMEDIATE RESPONSE, " +
+                        "http://144.75.191.68:5005/getimage";
                 String s1 = "7706246972";
                 String s3 = "3362072493";
                 String myPhone = "15555215554";

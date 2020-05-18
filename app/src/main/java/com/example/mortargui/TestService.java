@@ -52,7 +52,7 @@ public class TestService extends Service {
         super.onCreate();
 
 
-        String url2 = "https://vmihci.herokuapp.com/getrisk";
+        String url2 = "http://144.75.191.68:5005/getthreat";
 
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
